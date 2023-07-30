@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -53,7 +52,7 @@ import java.util.Scanner;
 //язык программирования Python
 //Не найдено
 //код, который нужен, чтобы исправить несовершенство ранее написанного кода
-public class Task50 {
+public class Pr {
 
   public static void main(String[] args) {
     Scanner scanner;
@@ -69,7 +68,7 @@ public class Task50 {
 
     for (int i = 0; i < n; i++) {
       String line = scanner.nextLine();
-      String[] cells = line.split(": ");
+      String[] cells = line.split(":");
       try {
         String word = cells[0];
         String slang = cells[1];
@@ -84,19 +83,18 @@ public class Task50 {
     scanner.close();
 
     scanner = new Scanner(System.in);
-    try {
-      int m = scanner.nextInt();
-      scanner.nextLine();
-      List<String> slangs = new ArrayList<>();
-      for (int i = 0; i < m; i++) {
-        String word = scanner.nextLine().toLowerCase();
-        slangs.add(dictionary.getOrDefault(word, "Не найдено"));
-      }
-      for (String slang : slangs) {
-        System.out.println(slang);
-      }
-    } catch (InputMismatchException e) {
-      System.out.println("Не корректный ввод");
+
+    int m = scanner.nextInt();
+    scanner.nextLine();
+    List<String> slangs = new ArrayList<>();
+    for (int i = 0; i < m; i++) {
+      String word = scanner.nextLine().toLowerCase();
+      slangs.add(dictionary.getOrDefault(word, "Не найдено"));
+    }
+    for (String slang : slangs) {
+      System.out.println(slang);
     }
   }
 }
+
+
