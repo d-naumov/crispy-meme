@@ -1,5 +1,6 @@
 package Task51;
 
+
 public class Book implements Comparable<Book> {
 
   private final String author;
@@ -23,7 +24,6 @@ public class Book implements Comparable<Book> {
   public int getNumberOfPages() {
     return numberOfPages;
   }
-
 
   @Override
   public String toString() {
@@ -73,3 +73,32 @@ public class Book implements Comparable<Book> {
     return result;
   }
 }
+/* public static Map<String, Map<String, Integer>> readFromTxt(String filename) {
+    Map<String, Map<String, Integer>> result = new HashMap<>();
+    File bookFile = new File(filename);
+    try {
+      Scanner scanner = new Scanner(bookFile);
+      while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+        String[] cells = line.split(SEP);
+        try {
+          String author = cells[0];
+          String bookTitle = cells[1];
+
+          int numberOfPages = Integer.parseInt(cells[2]);
+          if (!result.containsKey(author)) {
+            result.put(author, new HashMap<>());
+          }
+          result.get(author).put(bookTitle, numberOfPages);
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+          System.out.println("Некорректная строка файла: " + line);
+        }
+      }
+      scanner.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("Не найден файл: " + e);
+    }
+    return result;
+  }
+
+ */
