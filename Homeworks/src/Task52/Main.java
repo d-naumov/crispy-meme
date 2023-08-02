@@ -4,6 +4,7 @@ package Task52;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -48,6 +49,7 @@ public class Main {
       }
       System.out.println();
       books.sort(new BookNumberOfPagesComparator());
+      Collections.reverse(books);
       for (Book book : books) {
         System.out.println(
             book.getAuthor() + ", " + book.getBookTitle() + ", " + book.getNumberOfPages());
