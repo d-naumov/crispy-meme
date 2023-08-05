@@ -6,7 +6,7 @@ public class BookNumberOfPagesComparator implements Comparator<Book> {
 
   @Override
   public int compare(Book o1, Book o2) {
-    int result = Integer.compare(o1.getNumberOfPages(), o2.getNumberOfPages());
+    int result = Integer.compare(o2.getNumberOfPages(), o1.getNumberOfPages());
     if (result != 0) {
       return result;
     }

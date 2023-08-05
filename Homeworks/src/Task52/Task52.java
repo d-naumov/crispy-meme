@@ -10,7 +10,6 @@ package Task52;
 // а при совпадающем объёме - по названиям ("по возрастанию", по алфавиту).
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Task52 {
@@ -42,7 +41,6 @@ public class Task52 {
     }
     System.out.println();
     books.sort(new BookNumberOfPagesComparator());
-    Collections.reverse(books);
     for (Book b : books) {
       System.out.println(b);
     }
