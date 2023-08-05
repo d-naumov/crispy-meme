@@ -19,4 +19,11 @@ class BookTests {
 
   }
 
+  @Test
+  public void testToString() {
+    Book book = new Book("Author", "BookTitle", 100);
+    String expected = "Book{author='Author', bookTitle='BookTitle', numberOfPages=100}";
+    assertEquals(expected, book.toString());
+  }
+
 }
