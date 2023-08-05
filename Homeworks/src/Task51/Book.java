@@ -1,6 +1,8 @@
 package Task51;
 
 
+import java.util.Objects;
+
 public class Book implements Comparable<Book> {
 
   private final String author;
@@ -67,10 +69,8 @@ public class Book implements Comparable<Book> {
 
   @Override
   public int hashCode() {
-    int result = author.hashCode();
-    result = 31 * result + bookTitle.hashCode();
-    result = 31 * result + numberOfPages;
-    return result;
+
+    return Objects.hash(author, bookTitle, numberOfPages);
   }
 }
 /* public static Map<String, Map<String, Integer>> readFromTxt(String filename) {
