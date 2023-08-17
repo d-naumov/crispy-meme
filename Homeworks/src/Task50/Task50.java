@@ -10,7 +10,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 //Задача 1
-//Программисты, как вы уже знаете, постоянно учатся, а в общении между собой используют весьма специфический язык.
+//Программисты, как вы уже знаете, постоянно учатся,
+// а в общении между собой используют весьма специфический язык.
 // Чтобы систематизировать ваш пополняющийся профессиональный лексикон, мы придумали эту задачу.
 //
 //Напишите программу создания небольшого словаря сленговых программистских выражений,
@@ -76,7 +77,7 @@ public class Task50 {
         if (!dictionary.containsKey(word)) {
           dictionary.put(word.toLowerCase(), slang);
         }
-        dictionary.get(word);
+        //dictionary.get(word);
       } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
         System.out.println("Некорректная строка файла: " + line);
       }
@@ -89,8 +90,8 @@ public class Task50 {
       scanner.nextLine();
       List<String> slangs = new ArrayList<>();
       for (int i = 0; i < m; i++) {
-        String word = scanner.nextLine().toLowerCase();
-        slangs.add(dictionary.getOrDefault(word, "Не найдено"));
+        String word = scanner.nextLine();
+        slangs.add(dictionary.getOrDefault(word.toLowerCase(), "Не найдено"));
       }
       for (String slang : slangs) {
         System.out.println(slang);
